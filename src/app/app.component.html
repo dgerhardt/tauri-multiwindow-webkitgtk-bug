@@ -1,19 +1,19 @@
 <main class="container">
-  <h1>Welcome to Tauri + Angular!</h1>
-
-  <div class="row">
-    <a href="https://tauri.app" target="_blank">
-      <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-    </a>
-    <a href="https://angular.io" target="_blank">
-      <img src="/assets/angular.svg" class="logo angular" alt="Angular logo" />
-    </a>
+  <h1>Bug reproduction</h1>
+  <div>
+    <ol>
+      <li>Run this app on Linux.</li>
+      <li>Click "Open" to open the entered URL. A new WebviewWindow will be opened with the URL. This should work.</li>
+      <li>Click "Break it!". 10 WebviewWindows will be opened and immediately closed. The last one will kept open. It will be blank instead of showing a website.</li>
+      <li>Click "Open" again. A new WebviewWindow will be opened but the window is blank.</li>
+    </ol>
   </div>
-  <p>Click on the logos to learn more about the frameworks</p>
-
-  <form class="row" (submit)="greet($event, greetInput.value)">
-    <input #greetInput id="greet-input" placeholder="Enter a name..." />
-    <button type="submit">Greet</button>
-  </form>
-  <p>{{ greetingMessage }}</p>
+  <div class="row">
+    <input id="url-input" placeholder="Enter a URL..." [(ngModel)]="url" />
+    &nbsp;
+    <button (click)="openWindowForUrl()">Open</button>
+  </div>
+  <div class="row">
+    <button (click)="openWindows()">Break it!</button>
+  </div>
 </main>

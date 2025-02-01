@@ -1,6 +1,6 @@
-# Tauri + Angular
+# Tauri Multi Window WebkitGTK Bug
 
-This template should help get you started developing with Tauri and Angular.
+This repository contains a reproduction for a Tauri bug (https://github.com/tauri-apps/tauri/issues/12589) on Linux.
 
 ## Recommended IDE Setup
 
